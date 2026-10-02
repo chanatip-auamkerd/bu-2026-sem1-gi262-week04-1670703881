@@ -1,3 +1,4 @@
+using System.IO.MemoryMappedFiles;
 using UnityEngine;
 
 namespace Solution
@@ -8,6 +9,9 @@ namespace Solution
         {
             Debug.Log("Item: " + Name + " has been picked up.");
             // ทำลายไอเท็มออกจากฉาก
+            Destroy(gameObject);
+            mapGenerator.player.inventory.AddItem(name, 1);
+            
 
             return true;
         }
